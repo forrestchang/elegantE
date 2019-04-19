@@ -39,7 +39,8 @@ def fib(n):
 
 @test_exception_handler([
     (NoneArgumentError, lambda: print('None Argument Error')),
-    (ArgumentError, lambda: print('Argument Error'))
+    (ArgumentError, lambda: print('Argument Error')),
+    (AttributeError, lambda x: print(f'Attribute Error {x}'), {'x': 'test'})
 ])
 def main():
     fib('Hello world')
